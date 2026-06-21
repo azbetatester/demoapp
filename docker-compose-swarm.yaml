@@ -1,16 +1,16 @@
 services:
     web:
-        image: <username>/bgapp-web
+        image: azbetatester/bgapp-web
         deploy:
             replicas: 5
         ports:
             - 8080:80
         volumes:
-            - "/home/vagrant/<app-folder>/web:/var/www/html:ro"
+            - "/home/vagrant/demoapp/web:/var/www/html:ro"
         networks:
             - app-network
     db:
-        image: <username>/bgapp-db
+        image: azbetatester/bgapp-db
         networks:
             - app-network
         environment:
